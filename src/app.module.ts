@@ -1,10 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
+import { SequelizeModule } from '@nestjs/sequelize';
+import { dataBaseConfig } from './database/database.config';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [ShoppingListModule, SequelizeModule.forRoot(dataBaseConfig)],
 })
 export class AppModule {}
