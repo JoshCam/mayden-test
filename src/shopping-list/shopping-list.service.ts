@@ -62,11 +62,12 @@ export class ShoppingListService {
     if (item && Number(item.itemQuantity) > 1) {
       let currentQuantity = Number(item.itemQuantity);
       return item.update({ itemQuantity: (currentQuantity -= 1) });
-    } else {
+    } else if (item && Number(item.itemQuantity) <= 1) {
       // else remove item from list all together
       item.destroy();
       return { message: 'item quantity fell below 1, removed from list' };
     }
+    return { message: 'Item not found' };
   }
 
   /**

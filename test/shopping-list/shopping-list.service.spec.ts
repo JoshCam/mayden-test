@@ -49,5 +49,43 @@ describe('ShoppingListService', () => {
       expect(result).toStrictEqual(undefined);
       expect(repository.findAll).toBeCalledTimes(1);
     });
+
+    it('should return an array of items if there are items stored in the cart', () => {
+      //
+    });
+  });
+
+  describe('upsertItemToList()', () => {
+    it("should save an item to the cart if one doesn't exist", () => {
+      //
+    });
+
+    it('should update an items quantity in the cart if the item already exists', () => {
+      //
+    });
+  });
+
+  describe('removeItem()', () => {
+    it('should decrement an items quantity by 1 if the current quantity is > 1', () => {
+      //
+    });
+
+    it('should remove an item if the current quantity is < 1', () => {
+      //
+    });
+
+    it('should return a message stating item could not be found if no item found', () => {
+      //
+    });
+  });
+
+  describe('markAsPurchased()', () => {
+    it('should update an items "purchased" value to true and return a message', () => {
+      //
+    });
+
+    it('should return a message stating item could not be found if no item found', () => {
+      //
+    });
   });
 });
